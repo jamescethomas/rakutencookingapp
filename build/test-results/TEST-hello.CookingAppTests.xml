@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hello.CookingAppTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-06-12T03:36:25" hostname="james-VirtualBox" time="0.854">
+  <properties/>
+  <testcase name="testOne" classname="hello.CookingAppTests" time="0.333"/>
+  <testcase name="testTWo" classname="hello.CookingAppTests" time="0.044"/>
+  <testcase name="testTwo" classname="hello.CookingAppTests" time="0.459"/>
+  <system-out><![CDATA[{
+    
+}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

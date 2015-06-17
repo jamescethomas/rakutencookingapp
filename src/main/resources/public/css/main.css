@@ -1,0 +1,331 @@
+/* main.css */
+body {
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+@media screen and (min-width: 900px){
+	.ingredientInputContainer {
+		width: 800px;
+		margin: 0 auto;
+	}
+
+	.ingredientInput {
+		width: calc(100% - 130px) !important;
+		margin-right: 10px;
+	}
+
+	.ingredientButton {
+
+	}
+}
+
+@media screen and (max-width: 899px) {
+	.ingredientInputContainer {
+		width: 450px;
+		margin: 0 auto;
+	}
+
+	.ingredientInput {
+		width: 315px !important;
+		margin-right: 10px;
+	}
+
+	.ingredientButton {
+		width: 125px !important;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.ingredientInputContainer {
+		width: 100%;
+		margin: 0 0;
+	}
+
+	.ingredientInput {
+		width: 90% !important;
+		margin-right: 5%;
+		margin-left: 5%;
+		margin-bottom: 5px !important;
+	}
+
+	.ingredientButton {
+		width: 90% !important;
+		margin-right: 5%;
+		margin-left: 5%;
+	}
+
+	.submitButton {
+		width: 90% !important;
+		margin-right: 5%;
+		margin-left: 5%;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.navbar-form {
+		text-align: center !important;
+		position: fixed;
+		top: 0;
+		margin: 0;
+		width: 50vw;
+		padding: 0;
+		right: 25%;
+		margin-top: 8px;
+		border: none;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.recipe {
+		margin-left: 25px !important;
+		margin-right: 25px !important;
+	}
+
+	.osusume {
+		margin-left: 25px !important;
+		margin-right: 25px !important;
+	}
+
+	.form-group {
+		display: inline-block !important;
+		vertical-align: middle !important;
+	}
+
+	.navbar-form {
+		text-align: center !important;
+		position: fixed;
+		top: 0;
+		left: 50vw;
+		margin: 0;
+		width: 50vw !important;
+		padding: 0;
+		margin-top: 8px;
+		border: none;
+	}
+
+	.navbar-form .form-group .form-control {
+		width: 25vw !important;
+	}
+
+	.navbar-form .btn {
+		margin-top: -4px !important;
+	}
+}
+
+.navbar {
+	margin-bottom: 0px;
+	background-color: #FEFBEF !important;
+	/* background-color: rgba(255, 255, 255, 0.9) !important; */
+	/* background-color: #F5F8F9 !important; */
+}
+
+.navbar-default {
+     border-image: url('../img/borderBackground.PNG') 3 round !important;
+     border-bottom: 10px solid rgba(255, 255, 255, 0.8);
+     border-filter: blur(5px);
+}
+
+
+.ingredientInputContainer {
+	/* background-color: rgba(255, 255, 255, 0.8); */
+	/* background-color: red; */
+	background-image: url('../img/menuBackground.PNG');
+	-webkit-filter: brightness(1);
+	/* height: 100%; */
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background-color: red; */
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	position: fixed;
+	top: 50px;
+	border-image: url('../img/borderBackground.PNG') 3 round !important;      
+	 border-bottom: 10px solid rgba(255, 255, 255, 0.8);
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+.slider {
+	overflow-y: hidden;
+	/* max-height: 100px; */ /* approximate max height */
+
+	transition-property: all;
+	transition-duration: .8s;
+	transition-timing-function: cubic-bezier(0, 1, .8, 1);
+}
+
+.slider.closed {
+	-webkit-filter: brightness(1.2);
+	max-height: 0;
+	padding: 0;
+}
+
+.recipesContainer {
+	/* margin-top: 150px; */
+	margin-top: 90px;
+
+	transition-property: all;
+	transition-duration: .8s;
+	transition-timing-function: cubic-bezier(0, 1, .8, 1);
+}
+
+.recipesContainer.open {
+	margin-top: 150px !important;
+}
+
+.recipeTitle {
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+.recipeImage {
+	width: 400px;
+	height: 300px;
+}
+
+.recipeImage img {
+	max-width: 100% !important;
+	max-height: 100% !important;
+}
+
+.ingredientInput {
+	border-radius: 5px !important;
+	margin-bottom: 20px;
+}
+
+.removeButton {
+	color: gray;
+}
+
+.removeButton:hover {
+	color: rgb(255, 102, 102) !important;
+	cursor: pointer !important;
+}
+
+.crop {
+	height: 300px;
+	width: 300px;
+	overflow: hidden !important;
+}
+
+
+.btn-disabled {
+	opacity: 0.1;
+	background-color: rgb(0, 142, 200);
+	color: lightgray;
+}
+
+.background-image {
+  position: fixed;
+  left: -20px;
+  top: -20px;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  /* background-image: url('../img/background.jpg'); */
+  background-image: url('../img/yellow.jpg');
+  width: 110%;
+  height: 110%; 
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+
+-webkit-filter: opacity(.5);
+  filter: opacity(.5);
+}
+
+.btn-enabled {
+	opacity: 1;
+
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.btn-disabled {
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0) !important;
+	border-color: rgba(0, 0, 0, 0) !important;
+
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.recipe {
+	background-color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 20px;
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.recipe.warning {
+	background-color: rgba(255, 121, 121, 1) !important;
+	color: white;
+}
+
+.warningButton {
+	float: right;
+}
+
+.warningButton:hover {
+	color: black;
+	cursor: pointer !important;
+
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.animate {
+	animation: fadein 2s;
+}
+
+.animateSlower {
+	animation: fadein 2s;
+}
+
+@keyframes fadein {
+	from {opacity: 0; }
+	to   {opacity: 1; }
+}
+
+.noItems {
+	padding-right: 10px;
+}
+
+.osusume {
+	background-color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 20px;
+	margin-left: 10px;
+	padding: 20px;
+	border-radius: 4px;	
+}
+
+.osusume h3 {
+	margin-top: 0px;
+}
+
+.fadeout {
+	opacity: 0;
+	-webkit-transition: all 2s ease;
+	-moz-transition: all 2s ease;
+	-ms-transition: all 2s ease;
+	-o-transition: all 2s ease;
+	transition: all 2s ease;
+}

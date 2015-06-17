@@ -1,0 +1,17 @@
+<!-- add ingredients page -->
+<div>
+	<div class="row">
+		<div class="input-group ingredientInputContainer">
+			<input ng-model="inputIngredient" id="ingredientInput" type="text" class="form-control ingredientInput" placeholder="材料">
+			<buttun ng-click="addIngredient()" class="btn btn-default ingredientButton">Add Ingredient</buttun>
+		</div>
+	</div>
+	<div class="ingredientInputContainer">
+		<div ng-repeat="ingredient in ingredients" id="{{ingredient}}">
+		<span ng-click="removeIngredient(ingredient)" class="glyphicon glyphicon-remove removeButton"></span> {{ingredient}}
+		</div>
+	</div>
+	<div class="ingredientInputContainer">
+		<button id="submitButton" class="btn btn-disabled" style="width: 100%;" disabled>What can I make?</button>
+	</div>
+</div>

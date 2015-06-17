@@ -1,0 +1,116 @@
+<!-- add ingredients page -->
+<div>
+	<div class="background-image"></div>
+
+	<nav class="navbar navbar-default navbar-fixed-top" style="z-index: 10">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#/ingredientsView">楽天レシピおすすめ</a>
+			</div>
+
+			<!--
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Link</a></li>
+				</ul>
+			</div>
+			-->
+			<form class="navbar-form" style="text-align: center !important;">
+				<div class="form-group">
+					<input ng-model="inputIngredient" id="ingredientInput" type="text" class="form-control" placeholder="材料">
+				</div>
+				<buttun ng-click="addIngredient()" class="btn btn-default">材料を入力</buttun>
+			</form>
+		</div>
+	</nav>
+
+	<!--
+	<div class="row">
+		<div class="input-group ingredientInputContainer">
+			<input ng-model="inputIngredient" id="ingredientInput" type="text" class="form-control ingredientInput" placeholder="材料">
+			<buttun ng-click="addIngredient()" class="btn btn-default ingredientButton">Add Ingredient</buttun>
+		</div>
+	</div>
+	-->
+	<div class="ingredientInputContainer slider closed row" id="ingredientInputContainer" style="z-index: 10">
+		<div class="ingredientInputContainerInner">
+			<div class="col-xs-4 col-xs-offset-2">
+				<span style="vertical-align: middle" ng-repeat="ingredient in ingredients" id="{{ingredient}}">
+					<span ng-click="removeIngredient(ingredient)" class="glyphicon glyphicon-remove removeButton"></span> 
+					<span style="font-size: 20px !important">{{ingredient}}</span>
+				</span>
+			</div>
+			<div class="col-xs-4">
+				<button style="vertical-align: middle" ng-click="submitIngredients()" id="submitButton" class="btn btn-default submitButton pull-right btn-disabled" disabled>何が使える？</button>
+			</div>
+		</div>
+	</div>
+	<div class="recipesContainer">
+		<div ng-repeat="recipe in currentPage" class="row" style="z-index: 10">
+			<div ng-class="recipe.hasItems ? 'col-sm-5 col-sm-offset-2' : 'col-sm-8 col-sm-offset-2 noItems'" class="recipe animate">
+				<div class="recipeTitle">
+					<a href="{{recipe.recipeUrl}}">{{recipe.recipeTitle}}</a>
+				</div>
+				<div class="row">
+					<div class="col-xs-6"> <!-- recipeImage"> -->
+						<img class="img-responsive img-rounded img-thumbnail" ng-src="{{recipe.foodImageUrl}}">
+					</div>
+
+					<div class="col-xs-6">
+						<p>{{recipe.recipeDescription}}</p>
+						<ul>
+							<li ng-repeat="ingredient in recipe.recipeMaterial">{{ingredient}}</li>
+						</ul>
+					</div>
+				</div>
+				{{recipe.recipeCost}} {{recipe.recipeIndication}}
+			</div>
+			<div ng-show="recipe.hasItems"class="col-sm-3 animateSlower" style="padding-right: 0px">
+				<div class="osusume">
+					<h3>この材料はいかがでしょうか？</h3>
+					<hr>
+					<div ng-repeat="item in recipe.items">
+						<div>
+							<a href="{{item.Item.itemUrl}}">{{item.Item.itemName}}</a>
+						</div>
+						<div>
+							<img href="{{item.Item.itemUrl}}" class="img-responsive img-rounded img-thumbnail" ng-src="{{item.Item.mediumImageUrls[0].imageUrl}}">
+						</div>
+						<hr>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" id="noRecipesFound" style="display: none;">
+			<div class="col-sm-8 col-sm-offset-2 recipe warning">
+				<span ng-click="closeWarning()" class="glyphicon glyphicon-remove warningButton"></span>
+				<h3><span class="glyphicon glyphicon-cog"></span>申し訳ございませんが</h3>
+				<p>入力した材料と、レシピを探せませんでした。他の材料を入力してみてくださいませんか？</p>
+			</div>
+		</div>
+
+		<div class="row" id="welcomeMessage">
+			<div class="col-sm-8 col-sm-offset-2 recipe animate">
+				<h3><span class="glyphicon glyphicon-grain"></span>材料を入力してください。</h3>
+				<p>一つの材料を入力したら、「材料を入力」クリックするか、インターキーを押してください。</p>
+				<p>すべてのお使いしたい材料を入力したら、「何が使える」をお押しください。</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="pagination">
+		<ul>
+			<li ng-class="{disabled: currentPageNumber == 0}">
+				<a href ng-click="prevPage()">Prev</a>
+			</li>
+			<li>
+				{{currentPageNumber}}/{{numPages}}
+			</li>
+			<li ng-class="{disabled: currentPageNumber == numPages - 1}">
+				<a href ng-click="nextPage()">Next</a>
+			</li>
+		</ul>
+	</div>
+
+</div>

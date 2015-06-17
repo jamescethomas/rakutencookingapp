@@ -1,0 +1,7 @@
+README
+
+$ gradle bootRun
+
+filtering:
+	by time (recipeIndication)
+	by cost

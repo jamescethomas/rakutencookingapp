@@ -13,13 +13,31 @@ body {
 		width: calc(100% - 130px) !important;
 		margin-right: 10px;
 	}
-
-	.ingredientButton {
-
-	}
 }
 
-@media screen and (max-width: 899px) {
+.pagination {
+	font-size: 30px;
+	color: white;
+	z-index: 20;
+	margin: 0px !important;
+}
+
+.pagination .glyphicon {
+	vertical-align: middle;
+}
+
+.pagination .glyphicon:hover {
+	color: black;
+	cursor: pointer;
+
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 990px) {
 	.ingredientInputContainer {
 		width: 450px;
 		margin: 0 auto;
@@ -32,6 +50,15 @@ body {
 
 	.ingredientButton {
 		width: 125px !important;
+	}
+
+	.recipe {
+		margin-left: 25px !important;
+		margin-right: 25px !important;
+	}
+
+	.osusume {
+		margin-right: 25px !important;
 	}
 }
 
@@ -110,6 +137,10 @@ body {
 	.navbar-form .btn {
 		margin-top: -4px !important;
 	}
+
+	.osusumeContainer {
+		padding-left: 0px;
+	}
 }
 
 .navbar {
@@ -173,7 +204,7 @@ body {
 }
 
 .recipesContainer.open {
-	margin-top: 150px !important;
+	margin-top: 150px;
 }
 
 .recipeTitle {
@@ -197,12 +228,20 @@ body {
 }
 
 .removeButton {
-	color: gray;
+	color: white;
+	opacity: 0.5;
 }
 
 .removeButton:hover {
-	color: rgb(255, 102, 102) !important;
+	color: black;
 	cursor: pointer !important;
+	opacity: 1;
+
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
 }
 
 .crop {
@@ -300,6 +339,10 @@ body {
 	animation: fadein 2s;
 }
 
+.animateFast {
+	animation: fadein 1s;
+}
+
 @keyframes fadein {
 	from {opacity: 0; }
 	to   {opacity: 1; }
@@ -328,4 +371,46 @@ body {
 	-ms-transition: all 2s ease;
 	-o-transition: all 2s ease;
 	transition: all 2s ease;
+}
+
+.itemButton {
+	top: 50%;
+	vertical-align: middle;
+	font-size: 30px;
+	color: gray;
+
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.itemButton:hover {
+	color: black;
+	cursor: pointer !important;
+
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.itemButtonContainer {
+	height: 100px;
+}
+
+.osusumeContent{
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+	transition-timing-function: cubic-bezier(0, 1, .8, 1);
+}
+
+.ingredientList {
+	font-size: 20px !important;
+	color: white;
 }
